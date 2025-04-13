@@ -28,11 +28,16 @@ The FastAPI application automatically generates an OpenAPI schema (with a dynami
 ```
 
 2. Create and activate a virtual environment:
+
+```sh
    python3 -m venv venv
    source venv/bin/activate
+```
 
 3. Install dependencies:
+```sh
    pip install fastapi uvicorn requests
+```
 
 ## Environment Variables
 
@@ -42,12 +47,15 @@ The FastAPI application automatically generates an OpenAPI schema (with a dynami
 ## Running
 
 ```sh
+export REDMINE_URL="https://your-redmine.example.com"
+export PUBLIC_URL="https://your-domain.com"
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 ## Example curl Usage - Test
 
-Create Ticket:
+Test the bridge with local curl requetsts. 
+To create a ticket:
 
 ```sh
 curl -X POST http://localhost:8000/tickets/create \\
