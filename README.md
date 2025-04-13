@@ -22,8 +22,10 @@ The FastAPI application automatically generates an OpenAPI schema (with a dynami
 ## Installation
 
 1. Clone the Repository:
+```sh
    git clone https://github.com/StuttgartNerd/Redmine-OpenAPI-Bridge.git
    cd Redmine-OpenAPI-Bridge.git
+```
 
 2. Create and activate a virtual environment:
    python3 -m venv venv
@@ -39,19 +41,27 @@ The FastAPI application automatically generates an OpenAPI schema (with a dynami
 
 ## Running
 
+```sh
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
 
 ## Example curl Usage - Test
 
 Create Ticket:
+
+```sh
 curl -X POST http://localhost:8000/tickets/create \\
      -H "Content-Type: application/json" \\
      -H "X-Redmine-API-Key: YOUR_KEY" \\
      -d '{"project_id":1,"subject":"Example Ticket","description":"From API"}'
+```
 
 Get Ticket:
+
+```sh
 curl http://localhost:8000/tickets/1 \\
      -H "X-Redmine-API-Key: YOUR_KEY"
+```
 
 ## ChatGPT Custom GPT Integration
 
